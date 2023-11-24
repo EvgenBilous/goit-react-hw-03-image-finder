@@ -1,9 +1,11 @@
 import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 
-const ImageGallery = () => {
+const ImageGallery = ({ images }) => {
   return (
     <ul className="ImageGallery">
-      <ImageGalleryItem />
+      {images.map(image => {
+        return <ImageGalleryItem key={image.id} image={image} />;
+      })}
     </ul>
   );
 };
